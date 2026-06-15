@@ -1,0 +1,982 @@
+{
+  "schema_version": "2.7.0",
+  "exported_at_utc": "2026-02-22T22:15:00.0000000Z",
+  "game_build": "1.4.0f1",
+  "mod_version": "2.0.0",
+  "city": {
+    "status": "ok",
+    "notes": [
+      "live ECS city counts resolved successfully."
+    ],
+    "city_name": "Evergreen Bay",
+    "district_count": 17,
+    "building_count": 42281,
+    "source_component": "ecs.city:Game.Buildings.Building|Game.Areas.District"
+  },
+  "population": {
+    "status": "ok",
+    "notes": [
+      "population aggregates resolved from active citizen and household ECS state."
+    ],
+    "total_population": 173422,
+    "household_count": 79244,
+    "birth_rate_per_month": null,
+    "death_rate_per_month": null,
+    "local_population": 161104,
+    "tourist_population": 7156,
+    "commuter_population": 5162,
+    "moving_away_population": 1234,
+    "homeless_population": 286,
+    "working_age_population": 107943,
+    "children_population": 32411,
+    "elderly_population": 33068,
+    "source_component": "ecs.population:Game.Citizens.Citizen|Game.Citizens.Household"
+  },
+  "official_city_statistics": {
+    "status": "ok",
+    "notes": [
+      "official city statistics are aggregate runtime counters from managed game systems and city singleton components."
+    ],
+    "time": {
+      "game_tick": 24930112,
+      "game_year": 2029,
+      "game_month": 8,
+      "game_day": 17,
+      "days_per_year": 12,
+      "sample_count": 128,
+      "k_updates_per_day": 128,
+      "k_ticks_per_day": 262144
+    },
+    "finance": {
+      "money": 18425000,
+      "income": 1112000,
+      "expense": 976000,
+      "trade": 84200
+    },
+    "taxes": {
+      "residential_taxable_income": 522000,
+      "commercial_taxable_income": 318000,
+      "industrial_taxable_income": 286000,
+      "office_taxable_income": 221000
+    },
+    "population_flow": {
+      "population": 173422,
+      "population_with_move_in": 174031,
+      "citizens_moved_in": 1240,
+      "citizens_moved_away": 631,
+      "birth_rate": 241,
+      "death_rate": 188
+    },
+    "social": {
+      "wellbeing": 74,
+      "health": 82,
+      "wellbeing_level": 4,
+      "health_level": 5,
+      "homeless_count": 286,
+      "crime_rate": 8,
+      "crime_count": 316,
+      "escaped_arrest_count": 12,
+      "collected_mail": 108233,
+      "delivered_mail": 104990
+    },
+    "tourism": {
+      "tourist_count": 7156,
+      "tourist_income": 148000,
+      "lodging_used": 2811,
+      "lodging_total": 3410,
+      "current_tourists": 2498,
+      "average_tourists": 2264,
+      "attractiveness": 72
+    },
+    "transport_totals": {
+      "passenger_count_bus": 32810,
+      "passenger_count_subway": 48200,
+      "passenger_count_train": 12840,
+      "passenger_count_tram": 29120,
+      "passenger_count_airplane": 1180,
+      "passenger_count_taxi": 2440,
+      "passenger_count_ship": 620,
+      "cargo_count_truck": 183400,
+      "cargo_count_train": 52400,
+      "cargo_count_ship": 18600,
+      "cargo_count_airplane": 940
+    },
+    "sectors": {
+      "service": {
+        "wealth": 840000,
+        "count": 1832,
+        "workers": 23144,
+        "max_workers": 24618
+      },
+      "processing": {
+        "wealth": 612000,
+        "count": 1256,
+        "workers": 18320,
+        "max_workers": 19480
+      },
+      "office": {
+        "wealth": 735000,
+        "count": 837,
+        "workers": 14212,
+        "max_workers": 15140
+      }
+    },
+    "city_services": {
+      "city_service_workers": 6120,
+      "city_service_max_workers": 6880,
+      "senior_worker_in_demand_percentage": 18,
+      "dev_tree_points": 6
+    },
+    "source_component": "official.city_statistics:Game.City.CityStatisticsSystem|Game.City.CitySystem|Game.Simulation.TimeSystem|Game.Simulation.SimulationSystem|Game.City.Population|Game.City.Tourism|Game.City.DevTreePoints",
+    "metric_metadata": {
+      "city_services": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "mixed",
+        "source_component": "Game.City.CityStatisticsSystem|Game.City.DevTreePoints"
+      },
+      "finance": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "currency",
+        "source_component": "Game.City.CitySystem|Game.City.CityStatisticsSystem"
+      },
+      "population_flow": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "count",
+        "source_component": "Game.City.CityStatisticsSystem|Game.City.Population"
+      },
+      "sectors": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "mixed",
+        "source_component": "Game.City.CityStatisticsSystem"
+      },
+      "social": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "mixed",
+        "source_component": "Game.City.CityStatisticsSystem"
+      },
+      "taxes": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "currency",
+        "source_component": "Game.City.CityStatisticsSystem"
+      },
+      "time": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "game_time",
+        "source_component": "Game.Simulation.TimeSystem|Game.Simulation.SimulationSystem|Game.City.CityStatisticsSystem"
+      },
+      "tourism": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "mixed",
+        "source_component": "Game.City.CityStatisticsSystem|Game.City.Tourism"
+      },
+      "transport_totals": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "count",
+        "source_component": "Game.City.CityStatisticsSystem"
+      }
+    }
+  },
+  "education": {
+    "status": "partial",
+    "notes": [
+      "education and employment estimates are derived from available citizen-worker ECS mappings."
+    ],
+    "educated_percent": 71.39,
+    "highly_educated_percent": 36.18,
+    "employment_rate_percent": 94.72,
+    "levels": [
+      {
+        "level": 0,
+        "total": 18542,
+        "total_percent": 17.18,
+        "workers": 16121,
+        "unemployed": 915,
+        "unemployed_percent": 4.93,
+        "homeless": 42,
+        "employable": 2463,
+        "outside": 337,
+        "under": 2126
+      },
+      {
+        "level": 1,
+        "total": 28491,
+        "total_percent": 26.39,
+        "workers": 25541,
+        "unemployed": 1022,
+        "unemployed_percent": 3.59,
+        "homeless": 66,
+        "employable": 2950,
+        "outside": 412,
+        "under": 2538
+      },
+      {
+        "level": 2,
+        "total": 26181,
+        "total_percent": 24.25,
+        "workers": 24573,
+        "unemployed": 718,
+        "unemployed_percent": 2.74,
+        "homeless": 51,
+        "employable": 1608,
+        "outside": 268,
+        "under": 1340
+      },
+      {
+        "level": 3,
+        "total": 20304,
+        "total_percent": 18.81,
+        "workers": 19142,
+        "unemployed": 487,
+        "unemployed_percent": 2.4,
+        "homeless": 29,
+        "employable": 1162,
+        "outside": 215,
+        "under": 947
+      },
+      {
+        "level": 4,
+        "total": 14425,
+        "total_percent": 13.36,
+        "workers": 13540,
+        "unemployed": 286,
+        "unemployed_percent": 1.98,
+        "homeless": 14,
+        "employable": 885,
+        "outside": 174,
+        "under": 711
+      }
+    ],
+    "source_component": "ecs.education:Game.Citizens.Citizen|Game.Citizens.Worker"
+  },
+  "transport_proxies": {
+    "status": "partial",
+    "notes": [
+      "congestion index may be unavailable when congestion ECS mappings are unresolved."
+    ],
+    "road_vehicle_entities": 28542,
+    "public_transport_vehicle_entities": 1462,
+    "active_transport_lines": 214,
+    "congestion_index_0_to_1": null,
+    "source_component": "ecs.transport_proxy:Game.Vehicles.Vehicle|Game.Vehicles.PublicTransport|Game.Routes.TransportLine"
+  },
+  "workforce": {
+    "status": "ok",
+    "notes": [
+      "workforce level counts resolved from local citizens and worker components."
+    ],
+    "total_potential_workers": 107943,
+    "workers": 98874,
+    "unemployed": 3428,
+    "homeless_unemployed": 202,
+    "employable": 5641,
+    "outside_workers": 1406,
+    "underemployed_workers": 4235,
+    "levels": [
+      {
+        "level": 0,
+        "total": 18542,
+        "total_percent": 17.18,
+        "workers": 16121,
+        "unemployed": 915,
+        "unemployed_percent": 4.93,
+        "homeless": 42,
+        "employable": 2463,
+        "outside": 337,
+        "under": 2126
+      },
+      {
+        "level": 1,
+        "total": 28491,
+        "total_percent": 26.39,
+        "workers": 25541,
+        "unemployed": 1022,
+        "unemployed_percent": 3.59,
+        "homeless": 66,
+        "employable": 2950,
+        "outside": 412,
+        "under": 2538
+      },
+      {
+        "level": 2,
+        "total": 26181,
+        "total_percent": 24.25,
+        "workers": 24573,
+        "unemployed": 718,
+        "unemployed_percent": 2.74,
+        "homeless": 51,
+        "employable": 1608,
+        "outside": 268,
+        "under": 1340
+      },
+      {
+        "level": 3,
+        "total": 20304,
+        "total_percent": 18.81,
+        "workers": 19142,
+        "unemployed": 487,
+        "unemployed_percent": 2.4,
+        "homeless": 29,
+        "employable": 1162,
+        "outside": 215,
+        "under": 947
+      },
+      {
+        "level": 4,
+        "total": 14425,
+        "total_percent": 13.36,
+        "workers": 13540,
+        "unemployed": 286,
+        "unemployed_percent": 1.98,
+        "homeless": 14,
+        "employable": 885,
+        "outside": 174,
+        "under": 711
+      }
+    ],
+    "source_component": "ecs.workforce:Game.Citizens.Citizen|Game.Citizens.Worker"
+  },
+  "workplaces": {
+    "status": "ok",
+    "notes": [
+      "workplace distribution and staffing counts resolved from work provider and employee buffers."
+    ],
+    "total_workplaces": 101340,
+    "filled_workplaces": 98874,
+    "open_workplaces": 2466,
+    "commuter_employees": 1406,
+    "work_providers_total": 6423,
+    "work_providers_service": 1832,
+    "work_providers_commercial": 1891,
+    "work_providers_leisure": 607,
+    "work_providers_extractor": 222,
+    "work_providers_industrial": 1034,
+    "work_providers_office": 837,
+    "levels": [
+      {
+        "level": 0,
+        "total": 21264,
+        "service": 5824,
+        "commercial": 6316,
+        "leisure": 1248,
+        "extractor": 1131,
+        "industrial": 4211,
+        "office": 2534,
+        "employees": 20576,
+        "open": 688,
+        "commuter": 301
+      },
+      {
+        "level": 1,
+        "total": 23612,
+        "service": 6044,
+        "commercial": 6955,
+        "leisure": 1499,
+        "extractor": 1196,
+        "industrial": 4725,
+        "office": 3193,
+        "employees": 23056,
+        "open": 556,
+        "commuter": 324
+      },
+      {
+        "level": 2,
+        "total": 21477,
+        "service": 5738,
+        "commercial": 5931,
+        "leisure": 1392,
+        "extractor": 1018,
+        "industrial": 4334,
+        "office": 3064,
+        "employees": 21068,
+        "open": 409,
+        "commuter": 301
+      },
+      {
+        "level": 3,
+        "total": 19835,
+        "service": 5412,
+        "commercial": 5277,
+        "leisure": 1204,
+        "extractor": 988,
+        "industrial": 3595,
+        "office": 3359,
+        "employees": 19276,
+        "open": 559,
+        "commuter": 281
+      },
+      {
+        "level": 4,
+        "total": 5152,
+        "service": 1811,
+        "commercial": 1342,
+        "leisure": 367,
+        "extractor": 194,
+        "industrial": 871,
+        "office": 567,
+        "employees": 4898,
+        "open": 254,
+        "commuter": 199
+      }
+    ],
+    "source_component": "ecs.workplaces:WorkProvider|Employee|PrefabRef|WorkplaceData|IndustrialProcessData|PropertyRenter|SpawnableBuildingData|Citizen"
+  },
+  "mobility": {
+    "status": "ok",
+    "notes": [
+      "mobility metrics are observed or derived from observed ECS/UI line data.",
+      "line-level mobility metrics are observed directly from transport line ECS/UI data.",
+      "line_identifier values prioritize XTM acronyms when available, then route_number."
+    ],
+    "traffic_volume_index": 19.5226,
+    "lines_total": 214,
+    "passenger_lines_total": 198,
+    "cargo_lines_total": 16,
+    "lines_by_transport_type": {
+      "bus": 148,
+      "tram": 26,
+      "subway": 14,
+      "train": 11,
+      "ship": 3,
+      "ferry": 4,
+      "air": 4,
+      "taxi": 2,
+      "unknown": 2
+    },
+    "active_vehicles_by_transport_type": {
+      "bus": 904,
+      "tram": 162,
+      "subway": 109,
+      "train": 89,
+      "ship": 31,
+      "ferry": 42,
+      "air": 51,
+      "taxi": 61,
+      "unknown": 13
+    },
+    "lines_with_service_count": 201,
+    "lines_without_service_count": 13,
+    "lines_with_service_percent": 93.93,
+    "line_vehicle_entities_p50": 4,
+    "line_vehicle_entities_p95": 14,
+    "top_lines_by_active_vehicles": [
+      {
+        "line_entity_index": 94012,
+        "line_entity_version": 1,
+        "line_name": "M1 Riverside Loop",
+        "line_identifier": "M1",
+        "line_identifier_source": "xtm_acronym",
+        "route_number": 1,
+        "mode": "subway",
+        "is_cargo": false,
+        "line_color": "#4FA8D5",
+        "active": true,
+        "visible": true,
+        "schedule": "day_and_night",
+        "stops": 14,
+        "active_vehicle_entities": 22,
+        "onboard_passenger_entities": 3080,
+        "total_passenger_capacity": 3520,
+        "usage_percent": 87.5,
+        "length_m": 18340.76
+      },
+      {
+        "line_entity_index": 94870,
+        "line_entity_version": 1,
+        "line_name": "A2 Airport Express",
+        "line_identifier": "A2",
+        "line_identifier_source": "xtm_acronym",
+        "route_number": 2,
+        "mode": "air",
+        "is_cargo": false,
+        "line_color": "#E35F3D",
+        "active": true,
+        "visible": true,
+        "schedule": "day",
+        "stops": 4,
+        "active_vehicle_entities": 15,
+        "onboard_passenger_entities": 930,
+        "total_passenger_capacity": 1500,
+        "usage_percent": 62,
+        "length_m": 45212.19
+      },
+      {
+        "line_entity_index": 95744,
+        "line_entity_version": 1,
+        "line_name": "Cargo Harbor West",
+        "line_identifier": "17",
+        "line_identifier_source": "route_number",
+        "route_number": 17,
+        "mode": "ship",
+        "is_cargo": true,
+        "line_color": "#2F8E6D",
+        "active": true,
+        "visible": false,
+        "schedule": "day",
+        "stops": 3,
+        "active_vehicle_entities": 12,
+        "onboard_passenger_entities": null,
+        "total_passenger_capacity": null,
+        "usage_percent": null,
+        "length_m": 26140.52
+      }
+    ],
+    "lines": [
+      {
+        "line_entity_index": 94012,
+        "line_entity_version": 1,
+        "line_name": "M1 Riverside Loop",
+        "line_identifier": "M1",
+        "line_identifier_source": "xtm_acronym",
+        "route_number": 1,
+        "mode": "subway",
+        "is_cargo": false,
+        "line_color": "#4FA8D5",
+        "active": true,
+        "visible": true,
+        "schedule": "day_and_night",
+        "stops": 14,
+        "active_vehicle_entities": 22,
+        "onboard_passenger_entities": 3080,
+        "total_passenger_capacity": 3520,
+        "usage_percent": 87.5,
+        "length_m": 18340.76
+      },
+      {
+        "line_entity_index": 94870,
+        "line_entity_version": 1,
+        "line_name": "A2 Airport Express",
+        "line_identifier": "A2",
+        "line_identifier_source": "xtm_acronym",
+        "route_number": 2,
+        "mode": "air",
+        "is_cargo": false,
+        "line_color": "#E35F3D",
+        "active": true,
+        "visible": true,
+        "schedule": "day",
+        "stops": 4,
+        "active_vehicle_entities": 15,
+        "onboard_passenger_entities": 930,
+        "total_passenger_capacity": 1500,
+        "usage_percent": 62,
+        "length_m": 45212.19
+      },
+      {
+        "line_entity_index": 95744,
+        "line_entity_version": 1,
+        "line_name": "Cargo Harbor West",
+        "line_identifier": "17",
+        "line_identifier_source": "route_number",
+        "route_number": 17,
+        "mode": "ship",
+        "is_cargo": true,
+        "line_color": "#2F8E6D",
+        "active": true,
+        "visible": false,
+        "schedule": "day",
+        "stops": 3,
+        "active_vehicle_entities": 12,
+        "onboard_passenger_entities": null,
+        "total_passenger_capacity": null,
+        "usage_percent": null,
+        "length_m": 26140.52
+      },
+      {
+        "line_entity_index": 96203,
+        "line_entity_version": 1,
+        "line_name": "Ferry Waterfront",
+        "line_identifier": "6",
+        "line_identifier_source": "route_number",
+        "route_number": 6,
+        "mode": "ferry",
+        "is_cargo": false,
+        "line_color": "#6B4CB2",
+        "active": true,
+        "visible": true,
+        "schedule": "day_and_night",
+        "stops": 6,
+        "active_vehicle_entities": 8,
+        "onboard_passenger_entities": 392,
+        "total_passenger_capacity": 640,
+        "usage_percent": 61.25,
+        "length_m": 12672.44
+      }
+    ],
+    "source_component": "ecs.mobility:Game.Vehicles.Vehicle|Game.Vehicles.PublicTransport|Game.Routes.TransportLine|Game.Routes.CargoTransportLine",
+    "metric_metadata": {
+      "active_vehicles_by_transport_type": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "count",
+        "source_component": "Game.UI.InGame.TransportUIUtils|Game.Vehicles.PublicTransport|Game.Routes.TransportLine"
+      },
+      "cargo_lines_total": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "count",
+        "source_component": "Game.Routes.CargoTransportLine"
+      },
+      "line_vehicle_entities_p50": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "count",
+        "source_component": "Game.UI.InGame.TransportUIUtils|Game.Routes.TransportLine|Game.Vehicles.PublicTransport"
+      },
+      "line_vehicle_entities_p95": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "count",
+        "source_component": "Game.UI.InGame.TransportUIUtils|Game.Routes.TransportLine|Game.Vehicles.PublicTransport"
+      },
+      "lines": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "line_records",
+        "source_component": "Game.UI.InGame.TransportUIUtils|Game.UI.NameSystem|Game.Routes.Color|Game.Routes.RouteNumber|BelzontTLM.XTMRouteExtraData"
+      },
+      "lines_by_transport_type": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "count",
+        "source_component": "Game.UI.InGame.TransportUIUtils|Game.Routes.TransportLine|Game.Prefabs.PrefabRef|Game.Prefabs.TransportType"
+      },
+      "lines_total": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "count",
+        "source_component": "Game.Routes.TransportLine|Game.Routes.CargoTransportLine"
+      },
+      "lines_with_service_count": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "count",
+        "source_component": "Game.UI.InGame.TransportUIUtils|Game.Routes.TransportLine|Game.Vehicles.PublicTransport"
+      },
+      "lines_with_service_percent": {
+        "measurement_kind": "derived",
+        "time_basis": "instant",
+        "units": "percent",
+        "source_component": "Game.UI.InGame.TransportUIUtils|Game.Routes.TransportLine|Game.Vehicles.PublicTransport"
+      },
+      "lines_without_service_count": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "count",
+        "source_component": "Game.UI.InGame.TransportUIUtils|Game.Routes.TransportLine|Game.Vehicles.PublicTransport"
+      },
+      "passenger_lines_total": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "count",
+        "source_component": "Game.Routes.TransportLine"
+      },
+      "top_lines_by_active_vehicles": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "count",
+        "source_component": "Game.UI.InGame.TransportUIUtils|Game.Routes.TransportLine|Game.Vehicles.PublicTransport"
+      },
+      "traffic_volume_index": {
+        "measurement_kind": "derived",
+        "time_basis": "instant",
+        "units": "index",
+        "source_component": "Game.Vehicles.Vehicle|Game.Vehicles.PublicTransport"
+      }
+    }
+  },
+  "economy_signals": {
+    "status": "partial",
+    "notes": [
+      "citizen wealth metrics are observed from Household.m_Resources across moved-in local households.",
+      "land value fields are currently unavailable pending stable ECS component mapping for policy-safe extraction."
+    ],
+    "land_value_avg": null,
+    "land_value_p25": null,
+    "land_value_p50": null,
+    "land_value_p75": null,
+    "citizen_wealth_avg": 20431.66,
+    "citizen_wealth_p25": 6110,
+    "citizen_wealth_p50": 14892,
+    "citizen_wealth_p75": 28655,
+    "source_component": "ecs.economy_signals:Game.Citizens.Household.m_Resources|Game.Buildings.LandValue",
+    "metric_metadata": {
+      "citizen_wealth_avg": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "currency",
+        "source_component": "Game.Citizens.Household.m_Resources"
+      },
+      "citizen_wealth_p25": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "currency",
+        "source_component": "Game.Citizens.Household.m_Resources"
+      },
+      "citizen_wealth_p50": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "currency",
+        "source_component": "Game.Citizens.Household.m_Resources"
+      },
+      "citizen_wealth_p75": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "currency",
+        "source_component": "Game.Citizens.Household.m_Resources"
+      },
+      "land_value_avg": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "land_value_index",
+        "source_component": "Game.Buildings.LandValue"
+      },
+      "land_value_p25": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "land_value_index",
+        "source_component": "Game.Buildings.LandValue"
+      },
+      "land_value_p50": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "land_value_index",
+        "source_component": "Game.Buildings.LandValue"
+      },
+      "land_value_p75": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "land_value_index",
+        "source_component": "Game.Buildings.LandValue"
+      }
+    }
+  },
+  "external_connections": {
+    "status": "partial",
+    "notes": [
+      "external-connection value metrics remain unavailable until stable ECS mappings for trade value aggregates are verified."
+    ],
+    "imports_total_value": null,
+    "exports_total_value": null,
+    "imports_by_resource": null,
+    "exports_by_resource": null,
+    "service_trade": null,
+    "source_component": "ecs.external_connections:Game.Objects.OutsideConnection|Game.Net.OutsideConnection",
+    "metric_metadata": {
+      "exports_by_resource": {
+        "measurement_kind": "observed",
+        "time_basis": "monthly",
+        "units": "currency_per_month",
+        "source_component": "Game.Economy.TradeCost"
+      },
+      "exports_total_value": {
+        "measurement_kind": "observed",
+        "time_basis": "monthly",
+        "units": "currency_per_month",
+        "source_component": "Game.Economy.TradeCost"
+      },
+      "imports_by_resource": {
+        "measurement_kind": "observed",
+        "time_basis": "monthly",
+        "units": "currency_per_month",
+        "source_component": "Game.Economy.TradeCost"
+      },
+      "imports_total_value": {
+        "measurement_kind": "observed",
+        "time_basis": "monthly",
+        "units": "currency_per_month",
+        "source_component": "Game.Economy.TradeCost"
+      },
+      "service_trade": {
+        "measurement_kind": "observed",
+        "time_basis": "monthly",
+        "units": "service_units_per_month",
+        "source_component": "Game.Net.OutsideConnection|Game.Objects.OutsideConnection"
+      }
+    }
+  },
+  "labor_market_detail": {
+    "status": "ok",
+    "notes": [
+      "labor market level alignment resolved from workforce and workplace scans."
+    ],
+    "jobs_available_by_education_level": {
+      "level_0": 21264,
+      "level_1": 23612,
+      "level_2": 21477,
+      "level_3": 19835,
+      "level_4": 5152,
+      "total": 91340
+    },
+    "jobs_filled_by_education_level": {
+      "level_0": 20576,
+      "level_1": 23056,
+      "level_2": 21068,
+      "level_3": 19276,
+      "level_4": 4898,
+      "total": 88874
+    },
+    "jobs_open_by_education_level": {
+      "level_0": 688,
+      "level_1": 556,
+      "level_2": 409,
+      "level_3": 559,
+      "level_4": 254,
+      "total": 2466
+    },
+    "workforce_by_education_level": {
+      "potential": {
+        "level_0": 18542,
+        "level_1": 28491,
+        "level_2": 26181,
+        "level_3": 20304,
+        "level_4": 14425,
+        "total": 107943
+      },
+      "workers": {
+        "level_0": 16121,
+        "level_1": 25541,
+        "level_2": 24573,
+        "level_3": 19142,
+        "level_4": 13540,
+        "total": 98874
+      },
+      "unemployed": {
+        "level_0": 915,
+        "level_1": 1022,
+        "level_2": 718,
+        "level_3": 487,
+        "level_4": 286,
+        "total": 3428
+      },
+      "underemployed": {
+        "level_0": 2126,
+        "level_1": 2538,
+        "level_2": 1340,
+        "level_3": 947,
+        "level_4": 711,
+        "total": 7662
+      }
+    },
+    "source_component": "ecs.labor_market_detail:Game.Citizens.Citizen|Game.Citizens.Worker|Game.Companies.WorkProvider|Game.Companies.Employee",
+    "metric_metadata": {
+      "jobs_available_by_education_level": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "jobs",
+        "source_component": "Game.Companies.WorkProvider|Game.Companies.Employee|Game.Prefabs.WorkplaceData"
+      },
+      "jobs_filled_by_education_level": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "jobs",
+        "source_component": "Game.Companies.WorkProvider|Game.Companies.Employee"
+      },
+      "jobs_open_by_education_level": {
+        "measurement_kind": "derived",
+        "time_basis": "instant",
+        "units": "jobs",
+        "source_component": "Game.Companies.WorkProvider|Game.Companies.Employee"
+      },
+      "workforce_by_education_level": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "workers",
+        "source_component": "Game.Citizens.Citizen|Game.Citizens.Worker|Game.Citizens.Student"
+      }
+    }
+  },
+  "transit_line_detail_semantics": {
+    "status": "ok",
+    "notes": [
+      "line detail semantics mirror XTM's live line panel data path.",
+      "onboard_passengers_in_vehicles is current vehicle load, not a cumulative boarding counter."
+    ],
+    "lines_observed": 1,
+    "passenger_lines_observed": 1,
+    "cargo_lines_observed": 0,
+    "total_waiting_passengers": 585,
+    "total_onboard_passengers": 249,
+    "max_waiting_passengers_at_stop": 399,
+    "lines": [
+      {
+        "line_entity_index": 200,
+        "line_entity_version": 1,
+        "line_name": "Isaiah Streetcar",
+        "line_identifier": "2",
+        "line_identifier_source": "route_number",
+        "route_number": 2,
+        "mode": "tram",
+        "is_cargo": false,
+        "line_color": "#EB131B",
+        "active": true,
+        "visible": true,
+        "stop_count": 14,
+        "segment_count": 14,
+        "active_vehicle_entities": 6,
+        "stop_capacity": 80,
+        "waiting_passengers_all_stops": 585,
+        "max_waiting_passengers_at_stop": 399,
+        "onboard_passengers_in_vehicles": 249,
+        "total_passenger_capacity": 480,
+        "average_vehicle_occupancy_percent": 51.88,
+        "average_stop_occupancy_percent": 52.23,
+        "expected_round_trip_time_ticks": 916.41,
+        "expected_round_trip_time_minutes": 302.04,
+        "next_maintenance_vehicle_entity_index": 501,
+        "next_maintenance_vehicle_entity_version": 1,
+        "next_maintenance_distance_m": 7100,
+        "stops": [
+          {
+            "waypoint_entity_index": 301,
+            "waypoint_entity_version": 1,
+            "stop_name": null,
+            "waiting_passengers": 399,
+            "route_position": 0
+          }
+        ]
+      }
+    ],
+    "source_component": "ecs.transit_line_detail:Game.Routes.RouteWaypoint|Game.Routes.RouteVehicle|Game.Routes.RouteSegment|Game.Routes.WaitingPassengers|Game.Pathfind.PathInformation|Game.Vehicles.Odometer",
+    "metric_metadata": {
+      "lines": {
+        "measurement_kind": "observed",
+        "time_basis": "instant",
+        "units": "line_records",
+        "source_component": "Game.UI.InGame.TransportUIUtils|Game.Routes.RouteWaypoint|Game.Routes.RouteSegment|Game.Routes.RouteVehicle|Game.Pathfind.PathInformation|Game.Vehicles.Odometer"
+      }
+    }
+  },
+  "meta": {
+    "source": "ecs_observed",
+    "notes": [
+      "schema 2.7.0 exports observed and derived metrics only.",
+      "group 'education' exported with status 'partial'.",
+      "group 'transport_proxies' exported with status 'partial'.",
+      "group 'economy_signals' exported with status 'partial'.",
+      "group 'external_connections' exported with status 'partial'."
+    ],
+    "metric_status": {
+      "city": "ok",
+      "population": "ok",
+      "official_city_statistics": "ok",
+      "education": "partial",
+      "transport_proxies": "partial",
+      "workforce": "ok",
+      "workplaces": "ok",
+      "mobility": "ok",
+      "economy_signals": "partial",
+      "external_connections": "partial",
+      "labor_market_detail": "ok",
+      "transit_line_detail_semantics": "ok"
+    }
+  }
+}
