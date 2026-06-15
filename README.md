@@ -80,7 +80,7 @@ If you are installing a prebuilt copy, place the built mod files in:
 %USERPROFILE%\AppData\LocalLow\Colossal Order\Cities Skylines II\Mods\CS2DataExport
 ```
 
-Then enable `CS2DataExport` in the game's mod list.
+Then launch or reload the game.
 
 After launching or loading a city, check for:
 

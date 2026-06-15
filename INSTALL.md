@@ -52,11 +52,7 @@ if ($LASTEXITCODE -gt 7) {
 
 `robocopy /MIR` mirrors the source folder to the destination and can delete destination files that are not present in the build output. Use it only when you intentionally want the installed mod folder to match the fresh build.
 
-## 3. Enable in game
-
-Enable `CS2DataExport` from the mod list.
-
-## 4. Verify JSON export output
+## 3. Verify JSON export output
 
 Expected output root:
 
